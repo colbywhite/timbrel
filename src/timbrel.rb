@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'rake'
+require_relative 'config'
 
 def usage
   puts "USAGE: #{$0} vm_name vagrant_action"
@@ -8,8 +8,7 @@ end
 
 usage unless ARGV[0] && ARGV[1]
 
-
-vm_dir = '/home/colby/git/vms'
+vm_dir = File.expand_path CONFIG['vm_dir']
 vm_name = ARGV[0]
 vagrant_action = ARGV[1]
 
