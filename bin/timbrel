@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
-require 'timbrel'
 
 def usage
-  puts "USAGE: #{$0} vm_name vagrant_action"
+  puts "USAGE: #{File.basename($0)} vm_name vagrant_action"
   abort
 end
 
 usage unless ARGV[0] && ARGV[1]
 
-vm_dir = File.expand_path CONFIG['vm_dir']
+require 'timbrel'
+vm_dir = File.expand_path TIMBREL_CONFIG['vm_dir']
 vm_name = ARGV[0]
 vagrant_action = ARGV[1]
 
