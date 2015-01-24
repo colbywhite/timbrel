@@ -7,11 +7,9 @@ allowing you to `up`, `stop`, or `suspend` your vms from anywhere.
 > The name `timbrel` came out of random word generator. Sue me. 
 
 ## Install
-Just put `src/timbrel.rb` in your `PATH`. 
-I suggest just make a symlink from `~/bin` to the file.
 ```bash
-cd ~/bin
-ln -s path/to/src/timbrel.rb timbrel
+gem build timbrel.gemspec
+gem install timbrel-0.1.gem
 ```
 
 ## Configuration
@@ -20,11 +18,11 @@ See `timbrel.example.yaml` for an example of its contents.
 
 To override the location of the config yaml, set the environment variable `TIMBREL_CONFIG` with its location.
 
-## vm_dir structure
+### vm_dir structure
 If your root dir is `~/my_vms`, there is expected to be a `Vagrantfile` in at least one subdir. 
 The name of the subdir is assumed to be the name of the vm. 
 
-### Example
+#### Example
 ```bash
 $ ls ~/my_vms/**/Vagrantfile
 ~/my_vms/dev/Vagrantfile
@@ -33,6 +31,16 @@ $ ls ~/my_vms/**/Vagrantfile
 ```
 
 In the above example, timbrel will assume you have three vms: `dev`, `staging`, and `test`. 
+
+## Usage
+```bash
+# From any directory:
+timbrel dev status
+timbrel dev up
+timbrel staging up
+timbrel test suspend
+timbrel dev stop
+```
 
 # TODO 
 - Add `--list` command
