@@ -10,7 +10,7 @@ usage unless ARGV[0] && ARGV[1]
 require 'timbrel'
 vm_dir = File.expand_path TIMBREL_CONFIG['vm_dir']
 vm_name = ARGV[0]
-vagrant_action = ARGV[1]
+vagrant_action = ARGV[1..-1].join(' ')
 
 Dir.chdir(vm_dir) do
   puts "+ #{`pwd`}"

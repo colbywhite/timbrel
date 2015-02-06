@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'timbrel'
-  s.version     = '0.1'
+  s.version     = '0.2'
   s.date        = '2015-01-23'
   s.summary     = 'A simple tool to issue vagrant commands from any directory'
   s.description = 'This is a simple tool to issue vagrant commands based on a configured root dir of vms. timbrel will cd into the appropriate directory to issue the vagrant commands, allowing you to up, stop, or suspend your vms from anywhere.'
