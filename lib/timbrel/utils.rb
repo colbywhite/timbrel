@@ -1,6 +1,6 @@
 module Timbrel
   def self.version
-    '0.3'
+    '0.4'
   end
   
   def self.usage

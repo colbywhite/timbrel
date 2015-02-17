@@ -9,7 +9,7 @@ allowing you to `up`, `stop`, or `suspend` your vms from anywhere.
 ## Install
 ```bash
 gem build timbrel.gemspec
-gem install --local ./timbrel-0.3.gem
+gem install --local ./timbrel-0.4.gem
 ```
 
 ## Configuration
@@ -49,5 +49,5 @@ timbrel dev stop
 ```
 
 # TODO 
-- Add `--status-all` command 
--
+
+- Add `--status-all` command

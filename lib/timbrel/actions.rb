@@ -31,6 +31,7 @@ module Timbrel
       puts "Executing \"#{cmd}\" from #{current_vm_dir}"
       Dir.chdir(current_vm_dir) do
         system cmd
+        exit $?.exitstatus
       end
     end
   end
