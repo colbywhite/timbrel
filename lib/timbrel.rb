@@ -1,1 +1,1 @@
-require 'timbrel/config'
+require_relative 'timbrel/actions'

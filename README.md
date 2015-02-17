@@ -9,7 +9,7 @@ allowing you to `up`, `stop`, or `suspend` your vms from anywhere.
 ## Install
 ```bash
 gem build timbrel.gemspec
-gem install timbrel-0.1.gem
+gem install --local ./timbrel-0.3.gem
 ```
 
 ## Configuration
@@ -34,16 +34,20 @@ In the above example, timbrel will assume you have three vms: `dev`, `staging`, 
 
 ## Usage
 ```bash
+# Get help dialogue
+timbrel help 
+
+# list all recognized VMs
+timbrel list
+
 # From any directory:
 timbrel dev status
 timbrel dev up
-timbrel staging up
+timbrel staging up --provider=aws
 timbrel test suspend
 timbrel dev stop
 ```
 
 # TODO 
-- Add `--list` command
 - Add `--status-all` command 
-- Better error handling
-- Better logging
+-

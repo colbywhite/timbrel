@@ -1,23 +1,15 @@
 #!/usr/bin/env ruby
 
-def usage
-  puts "USAGE: #{File.basename($0)} vm_name vagrant_action"
-  abort
-end
-
-usage unless ARGV[0] && ARGV[1]
-
 require 'timbrel'
-vm_dir = File.expand_path TIMBREL_CONFIG['vm_dir']
-vm_name = ARGV[0]
-vagrant_action = ARGV[1..-1].join(' ')
+require 'timbrel/utils'
+Timbrel.usage if ARGV.size==0
 
-Dir.chdir(vm_dir) do
-  puts "+ #{`pwd`}"
-  Dir.chdir(vm_name) do
-    puts "+ #{`pwd`}"
-    cmd = "vagrant #{vagrant_action}"
-    puts "++ #{cmd}"
-    system cmd
-  end
-end
+action = ARGV[0]
+Timbrel.usage if action == 'help'
+Timbrel::Action.version if action == 'version'
+Timbrel::Action.list if action == 'list'
+
+# The standard execution
+vm_name = action
+vagrant_action = ARGV[1..-1].join(' ')
+Timbrel::Action.execute vm_name, vagrant_action
